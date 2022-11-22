@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="dto.Book"%>
-<%@ page import="dao.BookRepository"%>
+<%@ page import="dto.Cocktail"%>
+<%@ page import="dao.CocktailRepository"%>
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
@@ -15,47 +15,47 @@
 	</div>
 	<%
 	String id = request.getParameter("id");
-	BookRepository dao = BookRepository.getInstance();
-	Book book = dao.getBookById(id);
+	CocktailRepository dao = CocktailRepository.getInstance();
+	Cocktail cocktail = dao.getCocktailById(id);
 	%>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<img src="./resources/images/<%=book.getFilename()%>"
+				<img src="./resources/images/<%=cocktail.getFilename()%>"
 					style="width: 80%">
+					
+					        <iframe width="560" height="315" src="<%=cocktail.getYoutube() %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 			<div class="col-md-6">
-				<h3><%=book.getName()%></h3>
-				<p><%=book.getDescription()%>
+				<h3><%=cocktail.getName()%></h3>
+				<p><%=cocktail.getDescription()%>
 				<p>
-					<b>도서 코드:</b><span class="badge badge-danger"> <%=book.getBookId()%></span>
+					<b>도서 코드:</b><span class="badge badge-danger"> <%=cocktail.getCocktailId()%></span>
 				<p>
 					<b>출판사</b> :
-					<%=book.getPublisher()%>
+					<%=cocktail.getPublisher()%>
 				<p>
 					<b>저자</b> :
-					<%=book.getAuthor()%>
+					<%=cocktail.getAuthor()%>
 				<p>
 					<b>재고수</b> :
-					<%=book.getUnitsInStock()%>
+					<%=cocktail.getUnitsInStock()%>
 				<p>
 					<b>총 페이지수</b> :
-					<%=book.getTotalPages()%>
+					<%=cocktail.getTotalPages()%>
 				<p>
 					<b>출판일</b> :
-					<%=book.getReleaseDate()%>
-				<h4><%=book.getUnitPrice()%>원
+					<%=cocktail.getReleaseDate()%>
+				<h4><%=cocktail.getUnitPrice()%>원
 				</h4>
 				<p>
-					<a href="#" class="btn btn-info"> 도서 주문&raquo</a> <a
-						href="./products.jsp" class="btn btn-secondary">도서 목록 &raquo</a>
+					<a href="#" class="btn btn-info"> 도구 및 술 주문&raquo</a> <a
+						href="./cocktails.jsp" class="btn btn-secondary">칵테일 목록 &raquo</a>
 			</div>
 
 		</div>
 		<hr>
 	</div>
 	<jsp:include page="footer.jsp" />
-</body>
-</html>
 </body>
 </html>

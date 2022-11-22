@@ -24,13 +24,13 @@
             <a href="?language=kor">Korean</a>|<a href="?language=en">English</a>
             <a href="logout.jsp" class="btn btn-sm btn-success pull-right">Logout</a>
         </div>
-        <form action="processAddBook.jsp" name="newBook" class="form-horizontal" method="post"
+        <form action="processAddCocktail.jsp" name="newCocktail" class="form-horizontal" method="post"
         enctype="multipart/form-data">
 
         <div class="form-group row">
-            <label class="col-sm-2"><fmt:message key="bookId"/></label>
+            <label class="col-sm-2"><fmt:message key="cocktailId"/></label>
             <div class="col-sm-3">
-                <input type="text" id="bookId" name="bookId" class="form-control">
+                <input type="text" id="cocktailId" name="cocktailId" class="form-control">
             </div>
         </div>
 
@@ -108,15 +108,15 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2"><fmt:message key="bookImage"/></label>
+                <label class="col-sm-2"><fmt:message key="cocktailImage"/></label>
                 <div class="col-sm-5">
-                    <input type="file" name="bookImage" class="form-control">
+                    <input type="file" name="cocktailImage" class="form-control">
                 </div>
             </div>
 
             <div class="form-group row">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input type="button" class="btn btn-primary" value="<fmt:message key="button"/>" onclick="CheckAddBook()">
+                    <input type="button" class="btn btn-primary" value="<fmt:message key="button"/>" onclick="CheckAddCocktail()">
                 </div>
             </div>
         </form>

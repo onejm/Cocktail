@@ -1,7 +1,7 @@
 package dto;
 
-public class Book {
-	private String bookId;
+public class Cocktail {
+	private String cocktailId;
 	private String name;
 	private Integer unitPrice;
 	private String author;
@@ -13,23 +13,25 @@ public class Book {
 	private String releaseDate;
 	private String condition;
 	private String filename;
+	private String youtube;
 
-	public Book() {
+
+	public Cocktail() {
 		super();
 	}
 
-	public Book(String bookId, String name, Integer unitPrice) {
-		this.bookId = bookId;
+	public Cocktail(String cocktailId, String name, Integer unitPrice) {
+		this.cocktailId = cocktailId;
 		this.name = name;
 		this.unitPrice = unitPrice;
 	}
 
-	public String getBookId() {
-		return bookId;
+	public String getCocktailId() {
+		return cocktailId;
 	}
 
-	public void setBookId(String bookId) {
-		this.bookId = bookId;
+	public void setCocktailId(String cocktailId) {
+		this.cocktailId = cocktailId;
 	}
 
 	public String getName() {
@@ -117,5 +119,13 @@ public class Book {
 
 	public void setFilename(String filename) {
 		this.filename = filename;
+	}
+	
+	public String getYoutube() {
+		return youtube;
+	}
+
+	public void setYoutube(String youtube) {
+		this.youtube = youtube;
 	}
 }

@@ -1,7 +1,7 @@
 <%@page import="java.util.concurrent.Flow.Publisher"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="dto.Book"%>
-<%@ page import="dao.BookRepository"%>
+<%@ page import="dto.Cocktail"%>
+<%@ page import="dao.CocktailRepository"%>
 <%@ page import="com.oreilly.servlet.*"%>
 <%@ page import="com.oreilly.servlet.multipart.*"%>
 <%@ page import="java.util.*"%>
@@ -10,13 +10,13 @@
 request.setCharacterEncoding("utf-8");
 
 String filename = "";
-String realFolder = "C:\\Users\\정민\\eclipse-workspace\\BookMarket\\src\\main\\webapp\\WebContent\\resources\\images";
+String realFolder = "";
 int maxSize = 5 * 1024 * 1024;
 String encType = "utf-8";
 
 MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
 
-String bookId = multi.getParameter("bookId");
+String cocktailId = multi.getParameter("cocktailId");
 String name = multi.getParameter("name");
 String unitPrice = multi.getParameter("unitPrice");
 String author = multi.getParameter("author");
@@ -51,23 +51,23 @@ Enumeration files = multi.getFileNames();
 String fname = (String) files.nextElement();
 String fileName = multi.getFilesystemName(fname);
 
-BookRepository dao = BookRepository.getInstance();
+CocktailRepository dao = CocktailRepository.getInstance();
 
-Book newBook = new Book();
-newBook.setBookId(bookId);
-newBook.setName(name);
-newBook.setUnitPrice(price);
-newBook.setAuthor(author);
-newBook.setPublisher(publisher);
-newBook.setReleaseDate(releaseDate);
-newBook.setTotalPages(pages);
-newBook.setDescription(description);
-newBook.setCategory(category);
-newBook.setUnitsInStock(stock);
-newBook.setCondition(condition);
-newBook.setFilename(fileName);
+Cocktail newCocktail = new Cocktail();
+newCocktail.setCocktailId(cocktailId);
+newCocktail.setName(name);
+newCocktail.setUnitPrice(price);
+newCocktail.setAuthor(author);
+newCocktail.setPublisher(publisher);
+newCocktail.setReleaseDate(releaseDate);
+newCocktail.setTotalPages(pages);
+newCocktail.setDescription(description);
+newCocktail.setCategory(category);
+newCocktail.setUnitsInStock(stock);
+newCocktail.setCondition(condition);
+newCocktail.setFilename(fileName);
 
-dao.addBook(newBook);
+dao.addCocktail(newCocktail);
 
-response.sendRedirect("products.jsp");
+response.sendRedirect("cocktials.jsp");
 %>
