@@ -12,7 +12,7 @@ public class CocktailRepository {
 	}
 
 	public CocktailRepository() {
-		Cocktail b1 = new Cocktail("B1", "[Hello Coding] HTML5+CSS3", 15000);
+		Cocktail b1 = new Cocktail("B1", "a", 15000);
 		b1.setDescription(
 				"워드나 PPT 문서를 만들 수 있나요? 그러면 문제 없습니다. 지금 바로 웹페이지 제작에 도전해보세요. 지금 당장 컴퓨터가 없어도 괜찮습니다. 코드와 실행 화면이 바로 보여서 눈으...");
 		b1.setAuthor("황재호");

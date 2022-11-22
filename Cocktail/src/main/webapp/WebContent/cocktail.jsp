@@ -1,6 +1,9 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="dto.Cocktail"%>
 <%@ page import="dao.CocktailRepository"%>
+<%@ page import="dto.Product"%>
+<%@ page import="dao.ProductRepository"%>
+<%@ page import="java.util.ArrayList"%>
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
@@ -23,8 +26,23 @@
 			<div class="col-md-5">
 				<img src="./resources/images/<%=cocktail.getFilename()%>"
 					style="width: 80%">
-					
-					        <iframe width="560" height="315" src="<%=cocktail.getYoutube() %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<%!Product a; %>
+				<%
+				ProductRepository productDao = ProductRepository.getInstance();
+				ArrayList<Product> listOfProducts = productDao.getAllProducts();
+				
+				for(Product p:listOfProducts){
+					if(p.getPname()==cocktail.getName()){
+						a=p;
+					}
+				}
+				%>
+				<a href="./product.jsp?id=<%=a.getProductId()%>" class="btn btn-info"> </a>
+				<iframe width="560"
+						height="315" src="<%=cocktail.getYoutube()%>" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
 			</div>
 			<div class="col-md-6">
 				<h3><%=cocktail.getName()%></h3>
