@@ -16,7 +16,6 @@ public class Product implements Serializable{
 	private String manufacturer;
 	private String category;
 	private long unitsInStock;
-	private String condition;
 	private String filename;
 	
 	public Product(String productId, String pname, Integer unitPrice) {
@@ -82,13 +81,6 @@ public class Product implements Serializable{
 		this.unitsInStock = unitsInStock;
 	}
 
-	public String getCondition() {
-		return condition;
-	}
-
-	public void setCondition(String condition) {
-		this.condition = condition;
-	}
 	
 	public String getFilename() {
 		return filename;

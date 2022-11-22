@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css"/>
 <!-- 4.0.0 사용해야 네비게이션 검정으로 나옴 -->
 </head>
-<%!String str1 = "도서 웹 쇼핑몰";
+<%!String str1 = "칵테일";
 	String str2 = "Welcome to Cocktail Market";%>
 <body>
 	<%@ include file="menu.jsp" %>

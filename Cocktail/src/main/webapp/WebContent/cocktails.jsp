@@ -31,9 +31,7 @@
 			</div>
 			<div class="col-md-6">
 				<h3><%=cocktail.getName()%></h3>
-				<p><%=cocktail.getDescription()%>
-				<p><%=cocktail.getAuthor() + " | " + cocktail.getPublisher() + " | " + cocktail.getUnitPrice()%>원
-				</p>
+				<p><%=cocktail.getDescription()%>				</p>
 				<a href="./cocktail.jsp?id=<%=cocktail.getCocktailId()%>"
 					class="btn btn-secondary" role="button"> 상세 정보 &raquo;></a>
 			</div>

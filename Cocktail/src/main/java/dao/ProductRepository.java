@@ -14,33 +14,23 @@ public class ProductRepository {
     }
 	
 	public ProductRepository() {
-		Product phone = new Product("P1234", "a", 800000);
-		phone.setDescription("4.7-inch, 1334X750 Renina HD display, 8-megapixel iSight Camera");
-		phone.setCategory("Smart Phone");
-		phone.setManufacturer("Apple");
+		Product phone = new Product("P1234", "믹싱글라스", 8000);
+		phone.setDescription("칵테일 제조용 도구로, 칵테일 제조 기법 중 스터를 이용할 때 쓰는 컵으로 일반 유리잔보다 벽이 두텁고 용량이 크다. 모양은 딱히 정해지지 않았지만 흔히 비커와 비슷한 모양으로 따르는 주둥이가 있다");
+		phone.setCategory("Tool");
+		phone.setManufacturer("믹싱글라스 제조사");
 		phone.setUnitsInStock(1000);
-		phone.setCondition("New");
 		phone.setFilename("P1234.png");
 
-		Product notebook = new Product("P1235", "LG PC 그램", 1500000);
-		notebook.setDescription("13.3-inch, IPS LED display, 5rd Generation Intel Core processors");
-		notebook.setCategory("Notebook");
-		notebook.setManufacturer("LG");
+		Product notebook = new Product("P1235", "쉐이커", 15000);
+		notebook.setDescription("캡(cap)과 스트레이너(strainer), 그리고 보디(body)로 나뉘며, 전체가 스테인레스 스틸로 만들어져 있다.");
+		notebook.setCategory("Tool");
+		notebook.setManufacturer("쉐이커 제조사");
 		notebook.setUnitsInStock(1000);
-		notebook.setCondition("Refurbished");
 		notebook.setFilename("P1235.png");
 
-		Product tablet = new Product("P1236", "Galaxy Tab S", 900000);
-		tablet.setDescription("212.8*125.6*6.6mm,  Super AMOLED display, Octa-Core processor");
-		tablet.setCategory("Tablet");
-		tablet.setManufacturer("Samsung");
-		tablet.setUnitsInStock(1000);
-		tablet.setCondition("Old");
-		tablet.setFilename("P1236.png");
 
 		listOfProducts.add(phone);
 		listOfProducts.add(notebook);
-		listOfProducts.add(tablet);	
 	}
 	
 	public ArrayList<Product> getAllProducts() {
