@@ -6,15 +6,15 @@
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
-<title>도서 목록</title>
+<title>목록</title>
 </head>
 <body>
-	<jsp:include page="menu.jsp" />
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">칵테일 목록</h1>
 		</div>
 	</div>
+	<jsp:include page="menu.jsp" />
 	<%
 	CocktailRepository dao = CocktailRepository.getInstance();
 	ArrayList<Cocktail> listOfCocktails = dao.getAllCocktails();

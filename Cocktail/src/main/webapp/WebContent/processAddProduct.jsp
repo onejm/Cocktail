@@ -9,7 +9,7 @@
 request.setCharacterEncoding("UTF-8");
 
 String filename = "";
-String realFolder = "C:\\Users\\정민\\git\\WebMarket\\WebMarket\\src\\main\\webapp\\WebContent\\resources\\images";
+String realFolder = "C:\\Users\\정민\\git\\Cocktail\\Cocktail\\src\\main\\webapp\\WebContent\\resources\\images";
 int maxSize = 5*1024*1024;
 String encType = "utf-8";
 
@@ -22,7 +22,6 @@ String description = multi.getParameter("description");
 String manufacturer = multi.getParameter("manufacturer");
 String category = multi.getParameter("category");
 String unitsInStock = multi.getParameter("unitsInStock");
-String condition = multi.getParameter("condition");
 
 Integer price;
 
@@ -51,7 +50,6 @@ newProduct.setDescription(description);
 newProduct.setManufacturer(manufacturer);
 newProduct.setCategory(category);
 newProduct.setUnitsInStock(stock);
-newProduct.setCondition(condition);
 newProduct.setFilename(fileName);
 
 

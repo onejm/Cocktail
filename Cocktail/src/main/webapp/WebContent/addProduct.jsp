@@ -4,7 +4,6 @@
 <html>
 <head>
   <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
-    <script type="text/javascript" src="resources/js/validation.js"></script>
     <meta charset="UTF-8">
     <title>상품 등록</title>
 </head>
@@ -24,7 +23,7 @@
           <a href="?language=ko">Korean</a>|<a href="?language=en">English</a>
           <a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>
       </div>
-      <form action="processAddProduct.jsp" name="newProduct"
+      <form action="./processAddProduct.jsp" name="newProduct"
             class="form-horizontal" method="post" enctype="multipart/form-data">
 
           <div class="form-group row">
@@ -42,14 +41,14 @@
           </div>
 
           <div class="form-group row">
-              <label class="col-sm-2"><fmt:message key="pname"/></label>
+              <label class="col-sm-2"><fmt:message key="unitPrice"/></label>
               <div class="col-sm-3">
                   <input type="text" name="unitPrice" id="unitPrice" class="form-control">
               </div>
           </div>
 
           <div class="form-group row">
-              <label class="col-sm-2"><fmt:message key="unitPrice"/></label>
+              <label class="col-sm-2"><fmt:message key="unitInStock"/></label>
               <div class="col-sm-3">
                   <input type="text" name="unitsInStock" id="unitsInStock" class="form-control">
               </div>
@@ -76,29 +75,16 @@
                   <input type="text" name="category" class="form-control">
               </div>
           </div>
-
-          <div class="form-group row">
-              <label class="col-sm-2"><fmt:message key="condition"/></label>
-              <div class="col-sm-5">
-                  <input type="radio" name="condition" value="New">
-                  <fmt:message key="condition_New"/>
-                  <input type="radio" name="condition" value="Old">
-                  <fmt:message key="condition_Old"/>
-                  <input type="radio" name="condition" value="Refurbished">
-                  <fmt:message key="condition_Refurbished"/>
-              </div>
-          </div>
-
-          <div class="form-group row">
-              <label class="col-sm-2"><fmt:message key="productImage"/></label>
-              <div class="col-sm-5">
-                  <input type="file" name="productImage" class="form-control">
-              </div>
-          </div>
+				<div class="form-group row">
+					<label class="col-sm-2"><fmt:message key="productImage" /></label>
+					<div class="col-sm-5">
+						<input type="file" name="productImage" class="form-control">
+					</div>
+				</div>
 
           <div class="form-group row">
               <div class="col-sm-offset-2 col-sm-10">
-                  <input type="button" class="btn btn-primary" value="<fmt:message key="button"/>" onclick="CheckAddProduct()">
+                  <input type="submit" class="btn btn-primary" value="<fmt:message key="button"/>">
               </div>
           </div>
 
