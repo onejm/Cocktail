@@ -4,6 +4,7 @@
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page errorPage="exceptionNoCocktailId.jsp"%>
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
@@ -56,7 +57,7 @@
 						&raquo</a>
 			</div>
 			<div class="col-md-11">
-				<div class="jumbotron">
+				<div class="page-header">
 					<div class="container">
 						<h1 class="display-3">Recipe</h1>
 					</div>

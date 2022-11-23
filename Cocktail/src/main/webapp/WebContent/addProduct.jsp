@@ -4,6 +4,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./resources/css/jumbotron.css">
     <meta charset="UTF-8">
     <title>상품 등록</title>
 </head>

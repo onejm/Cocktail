@@ -6,10 +6,11 @@
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/jumbotron.css">
 <title>목록</title>
 </head>
 <body>
-	<div class="jumbotron">
+	<div class="jumbotron" style="background-image: url('./resources/images/background.jpg')">
 		<div class="container">
 			<h1 class="display-3">칵테일 목록</h1>
 		</div>

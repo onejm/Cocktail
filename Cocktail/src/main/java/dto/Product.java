@@ -17,7 +17,16 @@ public class Product implements Serializable{
 	private String category;
 	private long unitsInStock;
 	private String filename;
+	private int quantity;
 	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 	public Product(String productId, String pname, Integer unitPrice) {
 		super();
 		this.productId = productId;
