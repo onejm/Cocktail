@@ -2,6 +2,7 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
@@ -27,32 +28,33 @@ tr {
 }
 </style>
 <body>
+<fmt:setLocale value='<%=request.getParameter("language")%>'/>
+  <fmt:bundle basename="bundle.message">
 	<jsp:include page="menu.jsp" />
-		<div class="jumbotron01" style="background-image: url('./resources/background.jpg')">
-		<div class="container">
-			장바구니
-		</div>
+	<div class="jumbotron01"
+		style="background-image: url('./resources/background.jpg')">
+		<div class="container"><fmt:message key="shoppingBasket" /></div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<table width="100%">
 				<tr>
 					<td align="left"><a href="./deleteCart.jsp?cartId=<%=cartId%>"
-						class="btn btn-danger">삭제하기</a></td>
+						class="btn btn-danger"><fmt:message key="delete" /></a></td>
 					<td align="right"><a
 						href="./shippingInfo.jsp?cartId=<%=cartId%>"
-						class="btn btn-success">주문하기</a></td>
+						class="btn btn-success"><fmt:message key="order" /></a></td>
 				</tr>
 			</table>
 		</div>
 		<div style="padding-top: 50px">
 			<table class="table-hover">
 				<tr>
-					<th>상품</th>
-					<th>가격</th>
-					<th>수량</th>
-					<th>소계</th>
-					<th>비고</th>
+					<th></<fmt:message key="prdouct" /><th>
+					<th><fmt:message key="unitPrice" /></th>
+					<th><fmt:message key="unitsInStock" /></th>
+					<th><fmt:message key="subtotal" /></th>
+					<th><fmt:message key="note" /></th>
 				</tr>
 				<%
 				int sum = 0;
@@ -71,7 +73,7 @@ tr {
 					<td><%=product.getQuantity()%></td>
 					<td><%=total%></td>
 					<td><a href="./removeCart.jsp?id=<%=product.getProductId()%>"
-						class="badge badge-danger">삭제</a></td>
+						class="badge badge-danger"><fmt:message key="delete" /></a></td>
 				</tr>
 				<%
 				}
@@ -80,14 +82,15 @@ tr {
 					<th></th>
 					<th></th>
 					<th></th>
-					<th>총액</th>
+					<th><fmt:message key="totalAmount" /></th>
 					<th><%=sum%></th>
 				</tr>
 			</table>
-			<a href="products.jsp" class="btn btn-secondary">&laquo; 쇼핑 계속하기</a>
+			<a href="products.jsp" class="btn btn-secondary">&laquo; <fmt:message key="continueShopping" /></a>
 		</div>
 		<hr>
 	</div>
 	<jsp:include page="footer.jsp" />
+	</fmt:bundle>
 </body>
 </html>

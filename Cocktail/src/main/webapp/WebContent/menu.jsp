@@ -25,6 +25,8 @@
       <ul class="nav navbar-nav">
         <li><a href="products.jsp">상품목록</a></li>
         <li><a href="cocktails.jsp">칵테일</a></li>
+        <li><a href="?language=ko">한국어</a></li>
+        <li><a href="?language=en">English</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
