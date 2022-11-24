@@ -40,7 +40,7 @@
           </div>
 
           <div class="form-group row">
-              <label class="col-sm-2"><fmt:message key="pname"/></label>
+              <label class="col-sm-2"><fmt:message key="name"/></label>
                 <div class="col-sm-3">
                     <input type="text" name="name" id="name" class="form-control">
                 </div>
@@ -54,7 +54,7 @@
           </div>
 
           <div class="form-group row">
-              <label class="col-sm-2"><fmt:message key="unitInStock"/></label>
+              <label class="col-sm-2"><fmt:message key="unitsInStock"/></label>
               <div class="col-sm-3">
                   <input type="text" name="unitsInStock" id="unitsInStock" class="form-control">
               </div>
@@ -84,7 +84,8 @@
 				<div class="form-group row">
 					<label class="col-sm-2"><fmt:message key="productImage" /></label>
 					<div class="col-sm-5">
-						<input type="file" name="productImage" class="form-control">
+						<input type="file" name="productImage" class
+						="form-control">
 					</div>
 				</div>
 

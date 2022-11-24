@@ -54,9 +54,7 @@
 	<fmt:bundle basename="bundle.message">
 			<div class="jumbotron01" style="background-image: url('./resources/background.jpg')">
 			<div class="container">
-		
-					<fmt:message key="title" />
-				
+					<fmt:message key="cocktailTitle" />
 			</div>
 		</div>
 
