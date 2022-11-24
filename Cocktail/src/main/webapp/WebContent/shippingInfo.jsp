@@ -48,7 +48,7 @@
 				<div class="col-sm-offset-2 col-sm-10">
 					<a href="./cart.jsp?cartId=<%=request.getParameter("cartId")%>"
 						class="btn btn-secondary" role="button"><fmt:message key="before" /></a> <input
-						type="submit" class="btn btn-primary" value="등록" /> <fmt:message key="orderComplete" /><a
+						type="submit" class="btn btn-primary" value="등록" /><a
 						href="./checkOutCancelled.jsp" class="btn btn-secondary"
 						role="button:"><fmt:message key="cancellation" /></a>
 				</div>

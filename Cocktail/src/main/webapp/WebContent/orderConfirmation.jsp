@@ -62,7 +62,7 @@ if (cookies != null) {
 				<div class="col-4" align="left">
 					<strong><fmt:message key="address" /></strong><br> <fmt:message key="customerName" /> :
 					<%=shipping_name%><br> <fmt:message key="address" />
-					<%=shipping_addressName%>(<%=shipping_country%>)<br>
+					<%=shipping_addressName%><br>
 				</div>
 				<div class="col-4" align="right">
 					<p>
