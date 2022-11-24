@@ -27,7 +27,7 @@
 			<p><%=request.getRequestURL()%>?<%=request.getQueryString()%></p>
 			<p>
 				<a href="products.jsp" class="btn btn-secondary"><fmt:message
-						key="cocktailList" />&raquo;</a>
+						key="productList" />&raquo;</a>
 			</p>
 		</div>
 	</fmt:bundle>
