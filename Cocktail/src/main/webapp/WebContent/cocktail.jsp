@@ -5,18 +5,25 @@
 <%@ page import="dao.ProductRepository"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page errorPage="exceptionNoCocktailId.jsp"%>
+
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/jumbotron.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+	rel="stylesheet">
 <title>상품 상세 정보</title>
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">칵테일 정보</h1>
-		</div>
+	<div class="jumbotron01"
+		style="background-image: url('./resources/background.jpg')">
+		<div class="container">칵테일 정보</div>
 	</div>
+	
 	<%
 	String id = request.getParameter("id");
 	CocktailRepository dao = CocktailRepository.getInstance();
@@ -29,7 +36,7 @@
 					style="width: 80%">
 			</div>
 			<div class="col-md-6">
-				<h3><%=cocktail.getName()%></h3>
+				<h3 style=" font-weight: bold; "><%=cocktail.getName()%></h3>
 				<p>
 					재료:
 					<%!Product a;%>
@@ -56,19 +63,26 @@
 					<a href="./cocktails.jsp" class="btn btn-secondary">칵테일레시피 목록
 						&raquo</a>
 			</div>
+			
 			<div class="col-md-11">
-				<div class="page-header">
-					<div class="container">
-						<h1 class="display-3">Recipe</h1>
+			<br>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+					<div style=" font-size:50px; font-weight: bold; ">
+					레시피
+					</div>
+					</div>
+					<div class="panel-body">
+						<p align="middle">
+							<iframe width="560" height="315" src="<%=cocktail.getYoutube()%>"
+								frameborder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</p>
+						<p><%=cocktail.getRecipe()%>
 					</div>
 				</div>
-				<p align="middle">
-					<iframe width="560" height="315" src="<%=cocktail.getYoutube()%>"
-						frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen></iframe>
-				</p>
-				<p><%=cocktail.getRecipe()%>
+
 			</div>
 		</div>
 	</div>

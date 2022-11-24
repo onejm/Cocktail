@@ -3,6 +3,12 @@
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/jumbotron.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+	rel="stylesheet">
 <meta charset="UTF-8">
 <title>주문 취소</title>
 </head>

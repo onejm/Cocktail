@@ -10,7 +10,7 @@
 request.setCharacterEncoding("utf-8");
 
 String filename = "";
-String realFolder = "C:\\Users\\정민\\git\\Cocktail\\Cocktail\\src\\main\\webapp\\WebContent\\resources\\images";
+String realFolder = "C:\\Users\\정민\\eclipse-workspace\\Cocktail\\Cocktail\\src\\main\\webapp\\WebContent\\resources\\images";
 int maxSize = 5 * 1024 * 1024;
 String encType = "utf-8";
 

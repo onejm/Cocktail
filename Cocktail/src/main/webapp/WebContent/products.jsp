@@ -7,13 +7,19 @@
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/jumbotron.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+	rel="stylesheet">
 <title>惑前 格废</title>
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
-	<div class="jumbotron">
+		<div class="jumbotron01" style="background-image: url('./resources/background.jpg')">
 		<div class="container">
-			<h1 class="display-3">惑前 格废</h1>
+			惑前 格废
 		</div>
 	</div>
 	<%
