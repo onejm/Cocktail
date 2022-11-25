@@ -2,6 +2,9 @@
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
 <%@ page errorPage="exceptionNoProductId.jsp"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="dto.Cocktail"%>
+<%@ page import="dao.CocktailRepository"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
@@ -56,21 +59,56 @@
 						<b><fmt:message key="category" /></b> :
 						<%=product.getCategory()%>
 					<p>
-						<b><fmt:message key="unitsInStock" /></b> : <%=product.getUnitsInStock()%>
-							<h4><%=product.getUnitPrice()%>원
-							</h4>
-							<p>
-							<form name="addForm"
-								action="./addCart.jsp?id=<%=product.getProductId()%>"
-								method="post">
-								<p>
-									<a href="#" class="btn btn-info" onclick="addToCart()"><fmt:message key="product" />
-										주문</a> <a href="./cart.jsp" class="btn btn-warning"><fmt:message key="shoppingBasket" />
-										&raquo;</a> <a href="./products.jsp" class="btn btn-secondary">
-										<fmt:message key="productList" /> &raquo;
-									</a>
-							</form>
+						<b><fmt:message key="unitsInStock" /></b> :
+						<%=product.getUnitsInStock()%>
+					<h4><%=product.getUnitPrice()%>원
+					</h4>
+					<p>
+					<form name="addForm"
+						action="./addCart.jsp?id=<%=product.getProductId()%>"
+						method="post">
+						<p>
+							<a href="#" class="btn btn-info" onclick="addToCart()"><fmt:message
+									key="order" /></a> <a href="./cart.jsp" class="btn btn-warning"><fmt:message
+									key="shoppingBasket" /> &raquo;</a> <a href="./products.jsp"
+								class="btn btn-secondary"> <fmt:message key="productList" />
+								&raquo;
+							</a>
+					</form>
 				</div>
+			</div>
+			<div class="row">
+				<div class="page-header">
+					<br> <br> <br> <br> <h4> <fmt:message
+							key="relatedRecipes" />
+					</h4>
+				</div>
+				<%
+				CocktailRepository cocktailDao = CocktailRepository.getInstance();
+				ArrayList<Cocktail> listOfCocktails = cocktailDao.getAllCocktails();
+				for (Cocktail c : listOfCocktails) {
+					ArrayList<String> listOfIngredient = c.getIngredient();
+					for (String i : listOfIngredient) {
+						if (product.getPname() == i) {
+				%>
+				<div class="col-md-4" style="width: 320px; height: 450px;">
+					<img src="./resources/images/<%=c.getFilename()%>"
+						style="width: 100%; height:50%;">
+					<h3><%=c.getName()%></h3>
+					<p>
+						<a href="./cocktail.jsp?id=<%=c.getCocktailId()%>"
+							class="btn btn-secondary" role="button"> <!-- &raquo; = 특수문자 >> -->
+							<fmt:message key="description" /> &raquo;
+						</a>
+				</div>
+				<%
+				}
+				}
+				}
+				%>
+
+
+
 			</div>
 		</div>
 		<jsp:include page="footer.jsp" />

@@ -62,8 +62,6 @@
 					
 					<p><%=cocktail.getDescription()%>
 					<p>
-						<a href="./cocktails.jsp" class="btn btn-secondary"><fmt:message key="description" />
-							&raquo</a>
 				</div>
 
 				<div class="col-md-11">

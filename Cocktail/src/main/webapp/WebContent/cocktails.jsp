@@ -49,8 +49,7 @@
 						</div>
 						<p>
 							<a href="./cocktail.jsp?id=<%=cocktail.getCocktailId()%>"
-								style="background: gray" class="btn btn-primary" role="button">Button</a>
-							<a href="#" class="btn btn-default" role="button">Button</a>
+								style="background: gray" class="btn btn-primary" role="button"><fmt:message key="description"/></a>
 						</p>
 
 					</div>
