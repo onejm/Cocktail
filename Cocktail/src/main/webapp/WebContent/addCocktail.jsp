@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
+<script type="text/javascript" src="./resources/js/validation.js"></script>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="./resources/css/jumbotron.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +12,7 @@
 	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
 	rel="stylesheet">
 <meta charset="UTF-8">
-<script type="text/javascript" src="resources/js/validation.js"></script>
-<title>$Title$</title>
+<title>레시피 등록</title>
 <script>
 	var arrInput = new Array(0);
 	var arrInputValue = new Array(0);
@@ -125,8 +125,8 @@
 
 				<div class="form-group row">
 					<div class="col-sm-offset-2 col-sm-10">
-						<input type="submit" class="btn btn-primary"
-							value="<fmt:message key="button"/>">
+						<input type="button" class="btn btn-primary"
+							value="<fmt:message key="button"/>" onclick="CheckAddCocktail()">
 					</div>
 				</div>
 			</form>
