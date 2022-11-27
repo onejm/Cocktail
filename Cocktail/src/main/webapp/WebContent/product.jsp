@@ -48,7 +48,7 @@
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		rs = pstmt.executeQuery();
-		while(rs.next()){
+		while (rs.next()) {
 		%>
 		<div class="container">
 			<div class="row">
@@ -86,10 +86,40 @@
 					</form>
 				</div>
 			</div>
+			<div class="row">
+				<div class="page-header">
+					<br> <br> <br> <br>
+					<h4>
+						<fmt:message key="relatedRecipes" />
+					</h4>
+				</div>
+				<%
+				PreparedStatement pstmt2 = null;
+				ResultSet rs2 = null;
+				String sql2 = "SELECT * FROM cocktail";
+				pstmt2 = conn.prepareStatement(sql2);
+				rs2 = pstmt2.executeQuery();
+				while (rs2.next()) {
+					if (rs2.getString("c_ingredient").contains(rs.getString("p_name")))
+				%>
+				<div class="col-md-4" style="width: 320px; height: 450px;">
+					<img src="./resources/images/<%=rs2.getString("c_filename")%>"
+						style="width: 100%; height: 50%;">
+					<h3><%=rs2.getString("c_name")%></h3>
+					<p>
+						<a href="./cocktail.jsp?id=<%=rs2.getString("c_id")%>"
+							class="btn btn-secondary" role="button"> <!-- &raquo; = 특수문자 >> -->
+							<fmt:message key="description" /> &raquo;
+						</a>
+				</div>
+				<%
+				}
+				%>
+			</div>
 		</div>
 		<%
-			}
-			%>
+		}
+		%>
 		<jsp:include page="footer.jsp" />
 	</fmt:bundle>
 </body>

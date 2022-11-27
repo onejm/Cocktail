@@ -2,6 +2,8 @@
          pageEncoding="UTF-8" %>
 <%@ page import="com.oreilly.servlet.*"%>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import="dto.Cocktail"%>
+<%@ page import="dao.CocktailRepository"%>
 <%@ page import="java.util.Enumeration" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
@@ -24,6 +26,7 @@
     Enumeration files = multi.getFileNames();
     String fname = (String) files.nextElement();
     String fileName = multi.getFilesystemName(fname);
+   
     
     PreparedStatement pstmt = null;
 	ResultSet rs = null;

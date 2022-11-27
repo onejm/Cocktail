@@ -13,15 +13,11 @@
 	Cookie name = new Cookie("Shipping_name", URLEncoder.encode(request.getParameter("name"), "UTF-8"));
 	Cookie shippingDate = new Cookie("Shipping_shippingDate",
 			URLEncoder.encode(request.getParameter("shippingDate"), "UTF-8"));
-	Cookie addressName = new Cookie("Shipping_addressName",
-			URLEncoder.encode(request.getParameter("addressName"), "UTF-8"));
 	cartId.setMaxAge((24 * 60 * 60));
 	name.setMaxAge((24 * 60 * 60));
-	addressName.setMaxAge((24 * 60 * 60));
 	response.addCookie(cartId);
 	response.addCookie(name);
 	response.addCookie(shippingDate);
-	response.addCookie(addressName);
 	response.sendRedirect("orderConfirmation.jsp");
 	%>
 </body>

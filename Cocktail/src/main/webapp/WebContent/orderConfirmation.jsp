@@ -24,12 +24,6 @@ if (cookies != null) {
 	shipping_name = URLDecoder.decode(thisCookie.getValue(), "UTF-8");
 		if (n.equals("Shipping_shippingDate"))
 	shipping_shippingDate = URLDecoder.decode(thisCookie.getValue(), "UTF-8");
-		if (n.equals("Shipping_country"))
-	shipping_country = URLDecoder.decode(thisCookie.getValue(), "UTF-8");
-		if (n.equals("Shipping_zipCode"))
-	shipping_zipCode = URLDecoder.decode(thisCookie.getValue(), "UTF-8");
-		if (n.equals("Shipping_addressName"))
-	shipping_addressName = URLDecoder.decode(thisCookie.getValue(), "UTF-8");
 	}
 }
 %>
@@ -61,8 +55,7 @@ if (cookies != null) {
 			<div class="row justify-content-between">
 				<div class="col-4" align="left">
 					<strong><fmt:message key="address" /></strong><br> <fmt:message key="customerName" /> :
-					<%=shipping_name%><br> <fmt:message key="address" />
-					<%=shipping_addressName%><br>
+					<%=shipping_name%><br>s
 				</div>
 				<div class="col-4" align="right">
 					<p>

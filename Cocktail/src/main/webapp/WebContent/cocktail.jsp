@@ -46,7 +46,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
-					<img src="./resources/images/ <%=rs.getString("c_filename")%>"
+					<img src="./resources/images/<%=rs.getString("c_filename")%>"
 						style="width: 80%">
 				</div>
 				<div class="col-md-6">

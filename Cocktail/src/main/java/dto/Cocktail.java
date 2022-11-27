@@ -82,7 +82,7 @@ public class Cocktail {
 		return ingredient;
 	}
 
-	public void setIngredient(ArrayList<String> ingredient) {
+	public void setIngredient(ArrayList<String>ingredient) {
 		this.ingredient = ingredient;
 	}
 	

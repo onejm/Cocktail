@@ -39,12 +39,6 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2"><fmt:message key="address" /></label>
-				<div class="col-sm-5">
-					<input name="addressName" type="text" class="form-control" />
-				</div>
-			</div>
-			<div class="form-group row">
 				<div class="col-sm-offset-2 col-sm-10">
 					<a href="./cart.jsp?cartId=<%=request.getParameter("cartId")%>"
 						class="btn btn-secondary" role="button"><fmt:message key="before" /></a> <input
