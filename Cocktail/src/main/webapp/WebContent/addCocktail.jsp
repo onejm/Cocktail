@@ -105,7 +105,9 @@
 				<div class="form-group row">
 					<label class="col-sm-2"><fmt:message key="recipe" /></label>
 					<div class="col-sm-3">
-						<input type="text" name="recipe" id="recipe" class="form-control">
+						<textarea name="recipe" cols="50" rows="2" class="form-control">
+                               
+                            </textarea>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -125,7 +127,7 @@
 
 				<div class="form-group row">
 					<div class="col-sm-offset-2 col-sm-10">
-						<input type="button" class="btn btn-primary"
+						<input type="submit" class="btn btn-primary"
 							value="<fmt:message key="button"/>" onclick="CheckAddCocktail()">
 					</div>
 				</div>

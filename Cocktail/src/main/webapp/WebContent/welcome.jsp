@@ -109,7 +109,7 @@
 			style="background-image: url('./resources/background.jpg')">
 			<div class="container">
 
-				<b> 사이트 이름 
+				<b> Mixing You
 			</div>
 		</div>
 		<div class="container">

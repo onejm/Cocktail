@@ -20,7 +20,7 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="welcome.jsp">Brand</a>
+					<a class="navbar-brand" href="welcome.jsp">Mixing You</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,13 +32,16 @@
 									key="cocktailList" /></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
+					<% 
+						if(request.isUserInRole("admin")) {
+							%>
+							<jsp:include page="correction.jsp" />
+							 <%
+						}
+						%>
 					<li><a href="./cart.jsp"> <fmt:message key="shoppingBasket" /></a></li>
 						<li><a href="?language=ko">한국어</a></li>
 						<li><a href="?language=en">English</a></li>
-						<li><a href="./editProduct.jsp?edit=update">상품수정</a></li>
-						<li><a href="./editProduct.jsp?edit=delete">상품삭제</a></li>
-						<li><a href="./editCocktail.jsp?edit=update">레시피 수정</a></li>
-						<li><a href="./editCocktail.jsp?edit=delete">레시피 삭제</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

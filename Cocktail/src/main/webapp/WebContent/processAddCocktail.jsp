@@ -11,7 +11,7 @@
 request.setCharacterEncoding("utf-8");
 
 String filename = "";
-String realFolder = "C:\\Users\\min\\eclipse-workspace\\Cocktail\\Cocktail\\src\\main\\webapp\\WebContent\\resources\\images";
+String realFolder = "C:\\Users\\min\\git\\Cocktail\\Cocktail\\src\\main\\webapp\\WebContent\\resources\\images";
 int maxSize = 5 * 1024 * 1024;
 String encType = "utf-8";
 
@@ -43,7 +43,7 @@ String fname = (String) files.nextElement();
 String fileName = multi.getFilesystemName(fname);
 
 PreparedStatement pstmt = null;
-String sql = "INSERT INTO product VALUES(?,?,?,?,?,?,?,?)";
+String sql = "INSERT INTO cocktail VALUES(?,?,?,?,?,?,?,?)";
 pstmt = conn.prepareStatement(sql);
 pstmt.setString(1, cocktailId);
 pstmt.setString(2, name);

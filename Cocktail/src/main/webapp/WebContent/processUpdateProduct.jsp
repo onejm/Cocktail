@@ -21,6 +21,7 @@
     String category = multi.getParameter("category");
     String unitsInStock = multi.getParameter("unitsInStock");
     Integer price;
+    
     if (unitPrice.isEmpty())
         price = 0;
     else
@@ -30,9 +31,11 @@
         stock = 0;
     else
         stock = Long.parseLong(unitsInStock);
+    
     Enumeration files = multi.getFileNames();
     String fname = (String) files.nextElement();
     String fileName = multi.getFilesystemName(fname);
+    
     PreparedStatement pstmt = null;
     ResultSet rs = null;
     String sql = "SELECT*FROM product WHERE p_id=?";
@@ -61,7 +64,7 @@
             pstmt.setString(4, manufacturer);
             pstmt.setString(5, category);
             pstmt.setLong(6, stock);
-            pstmt.setString(8, productId);
+            pstmt.setString(7, productId);
             pstmt.executeUpdate();
         }
         if (rs != null)

@@ -6,7 +6,6 @@
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ include file="dbconn.jsp"%>
-
 <%
     String filename = "";
     String realFolder = "C:\\Users\\min\\git\\WebMarket\\WebMarket\\src\\main\\webapp\\WebContent\\resources\\images";
@@ -27,14 +26,14 @@
     String fileName = multi.getFilesystemName(fname);
     
     PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    String sql = "SELECT*FROM cocktail WHERE c_id=?";
-    pstmt = conn.prepareStatement(sql);
-    pstmt.setString(1, cocktailId);
-    rs = pstmt.executeQuery();
+	ResultSet rs = null;
+	String sql = "SELECT * FROM cocktail WHERE c_id=?";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, cocktailId);
+	rs = pstmt.executeQuery();
     if(rs.next()){
         if(fileName!=null){
-            sql="UPDATE cocktail SET c_name=?, c_description=?, c_category=?, c_filename=?, c_youtube, c_recipe, c_ingredient WHERE c_id=?";
+            sql="UPDATE cocktail SET c_name=?, c_description=?, c_category=?, c_filename=?, c_youtube=?, c_recipe=?, c_ingredient=? WHERE c_id=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, name);
             pstmt.setString(2, description);
@@ -46,7 +45,7 @@
             pstmt.setString(8, cocktailId);
             pstmt.executeUpdate();
         }else{
-        	 sql="UPDATE cocktail SET c_name=?, c_description=?, c_category=?, c_youtube, c_recipe, c_ingredient WHERE c_id=?";
+        	 sql="UPDATE cocktail SET c_name=?, c_description=?, c_category=?, c_youtube=?, c_recipe=?, c_ingredient=? WHERE c_id=?";
         	 pstmt = conn.prepareStatement(sql);
              pstmt.setString(1, name);
              pstmt.setString(2, description);
@@ -66,12 +65,3 @@
         response.sendRedirect("editCocktail.jsp?edit=update");
     }
 %>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>processUpdateCocktail.jsp</title>
-</head>
-<body>
-
-</body>
-</html>

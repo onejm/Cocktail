@@ -26,7 +26,7 @@
 	String cocktailId = request.getParameter("id");
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	String sql = "SELECT * FROM product WHERE p_id=?";
+	String sql = "SELECT * FROM cocktail WHERE c_id=?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, cocktailId);
 	rs = pstmt.executeQuery();
@@ -39,12 +39,12 @@
 					alt="image" style="width: 100%" />
 			</div>
 			<div class="col-md-7">
-				<form name="newProduct" action="./processUpdateProduct.jsp"
+				<form name="newProduct" action="./processUpdateCocktail.jsp"
 					class="form-horizontal" method="post" enctype="multipart/form-data">
 					<div class="form-group-row">
 						<label class="col-sm-2">레시피 코드</label>
 						<div class="col-sm-3">
-							<input type="text" id="cocktailId" name="Id" class="form-control"
+							<input type="text" id="cocktailId" name="cocktailId" class="form-control"
 								value='<%=rs.getString("c_id")%>'>
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 						<label class="col-sm-2">분류</label>
 						<div class="col-sm-3">
 							<input type="text" name="category" class="form-control"
-								value="<%=rs.getString("p_category")%>">
+								value="<%=rs.getString("c_category")%>">
 						</div>
 					</div>
 					<div class="form-group row">
@@ -81,19 +81,23 @@
 					<div class="form-group row">
 						<label class="col-sm-2">레시피</label>
 						<div class="col-sm-3">
-							<input type="text" name="recipe" id="recipe" class="form-control">
+							<textarea name="recipe" cols="50" rows="2" class="form-control">
+                                <%=rs.getString("c_recipe")%>
+                            </textarea>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2">이미지</label>
 						<div class="col-sm-5">
-							<input type="file" name="productImage" class="form-control" value="<%=rs.getString("c_recipe")%>">
+							<input type="file" name="productImage" class="form-control"
+								value="<%=rs.getString("c_recipe")%>">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2">재료</label>
 						<div class="col-sm-5">
-							<input type="file" name="ingredient" class="form-control" value="<%=rs.getString("c_ingredient")%>">
+							<input type="text" name="ingredient" class="form-control"
+								value="<%=rs.getString("c_ingredient")%>">
 						</div>
 					</div>
 					<div class="form-group row">
