@@ -25,7 +25,7 @@
     String edit = request.getParameter("edit");
 %>
 <body>
-	<jsp:include page="menu.jsp" />
+	<jsp:include page="menu2.jsp" />
 	<div class="jumbotron01" style="background-image: url('./resources/background.jpg')">
 		<div class="container">
 			<h1 class="display-3">상품 편집</h1>

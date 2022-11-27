@@ -33,7 +33,7 @@
 		}
 	}
 	%>
-	<jsp:include page="menu.jsp" />
+	<jsp:include page="menu2.jsp" />
 		<div class="jumbotron01" style="background-image: url('./resources/background.jpg')">
 		<div class="container">
 			주문 완료

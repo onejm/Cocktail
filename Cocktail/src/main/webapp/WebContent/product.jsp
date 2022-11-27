@@ -32,7 +32,7 @@
 <body>
 	<fmt:setLocale value='<%=request.getParameter("language")%>' />
 	<fmt:bundle basename="bundle.message">
-		<jsp:include page="menu.jsp" />
+		<jsp:include page="menu2.jsp" />
 		<div class="jumbotron01"
 			style="background-image: url('./resources/background.jpg')">
 			<div class="container">상품정보</div>
