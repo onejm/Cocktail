@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
+<%@ page import="java.sql.*"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
 	rel="stylesheet">
-<title>»óÇ° ¸ñ·Ï</title>
+<title>ìƒí’ˆ ëª©ë¡</title>
 </head>
 <body>
 	<fmt:setLocale value='<%=request.getParameter("language")%>' />
@@ -32,21 +33,27 @@
 		%>
 		<div class="container">
 			<div class="row" align="center">
+				<%@ include file="dbconn.jsp"%>
 				<%
-				for (int i = 0; i < listOfProducts.size(); i++) {
-					Product product = listOfProducts.get(i);
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+				String sql = "SELECT * FROM product";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
 				%>
 				<div class="col-md-4">
-					<img src="./resources/images/<%=product.getFilename()%>"
+					<img src="./resources/images/<%=rs.getString("p_filename")%>"
 						style="width: 100%">
-					<h3><%=product.getPname()%></h3>
-					<p><%=product.getDescription()%>
-					<p><%=product.getUnitPrice()%>¿ø
+					<h3><%=rs.getString("p_name")%></h3>
+					<p><%=rs.getString("p_description")%>
+						<p><%=rs.getString("p_unitPrice")%>ì›
 					<p>
-						<a href="./product.jsp?id=<%=product.getProductId()%>"
-							class="btn btn-secondary" role="button"> <!-- &raquo; = Æ¯¼ö¹®ÀÚ >> -->
-							<fmt:message key="description" /> &raquo;
-						</a>
+					<a href="./product.jsp?id=<%=rs.getString("p_id")%>"
+							class="btn btn-secondary" role="button"><!-- &raquo; = íŠ¹ìˆ˜ë¬¸ìž >> -->
+						<fmt:message key="description" />
+						&raquo; </a>
+					
 				</div>
 				<%
 				}

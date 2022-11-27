@@ -1,10 +1,12 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
-<%@ page errorPage="exceptionNoProductId.jsp"%>
+
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="dto.Cocktail"%>
 <%@ page import="dao.CocktailRepository"%>
+<%@ page import="java.sql.*"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
@@ -37,36 +39,43 @@
 		</div>
 		<%
 		String id = request.getParameter("id");
-		ProductRepository dao = ProductRepository.getInstance();
-		Product product = dao.getProductById(id);
+		%>
+		<%@ include file="dbconn.jsp"%>
+		<%
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM product WHERE p_id=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, id);
+		rs = pstmt.executeQuery();
+		while(rs.next()){
 		%>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
-					<img src="./resources/images/<%=product.getFilename()%>"
+					<img src="./resources/images/<%=rs.getString("p_filename")%>"
 						style="width: 100%">
 				</div>
 				<div class="col-md-6">
-					<h3><%=product.getPname()%></h3>
-					<p><%=product.getDescription()%>
+					<h3><%=rs.getString("p_name")%></h3>
+					<p><%=rs.getString("p_description")%>
 					<p>
 						<b><fmt:message key="productId" /> : </b><span
-							class="badge badge-danger"> <%=product.getProductId()%></span>
+							class="badge badge-danger"> <%=rs.getString("p_id")%></span>
 					<p>
 						<b><fmt:message key="manufacturer" /></b> :
-						<%=product.getManufacturer()%>
+						<%=rs.getString("p_manufacturer")%>
 					<p>
 						<b><fmt:message key="category" /></b> :
-						<%=product.getCategory()%>
+						<%=rs.getString("p_category")%>
 					<p>
 						<b><fmt:message key="unitsInStock" /></b> :
-						<%=product.getUnitsInStock()%>
-					<h4><%=product.getUnitPrice()%>원
+						<%=rs.getString("p_unitsInStock")%>
+					<h4><%=rs.getString("p_unitPrice")%>원
 					</h4>
 					<p>
 					<form name="addForm"
-						action="./addCart.jsp?id=<%=product.getProductId()%>"
-						method="post">
+						action="./addCart.jsp?id=<%=rs.getString("p_id")%>" method="post">
 						<p>
 							<a href="#" class="btn btn-info" onclick="addToCart()"><fmt:message
 									key="order" /></a> <a href="./cart.jsp" class="btn btn-warning"><fmt:message
@@ -77,40 +86,10 @@
 					</form>
 				</div>
 			</div>
-			<div class="row">
-				<div class="page-header">
-					<br> <br> <br> <br> <h4> <fmt:message
-							key="relatedRecipes" />
-					</h4>
-				</div>
-				<%
-				CocktailRepository cocktailDao = CocktailRepository.getInstance();
-				ArrayList<Cocktail> listOfCocktails = cocktailDao.getAllCocktails();
-				for (Cocktail c : listOfCocktails) {
-					ArrayList<String> listOfIngredient = c.getIngredient();
-					for (String i : listOfIngredient) {
-						if (product.getPname() == i) {
-				%>
-				<div class="col-md-4" style="width: 320px; height: 450px;">
-					<img src="./resources/images/<%=c.getFilename()%>"
-						style="width: 100%; height:50%;">
-					<h3><%=c.getName()%></h3>
-					<p>
-						<a href="./cocktail.jsp?id=<%=c.getCocktailId()%>"
-							class="btn btn-secondary" role="button"> <!-- &raquo; = 특수문자 >> -->
-							<fmt:message key="description" /> &raquo;
-						</a>
-				</div>
-				<%
-				}
-				}
-				}
-				%>
-
-
-
-			</div>
 		</div>
+		<%
+			}
+			%>
 		<jsp:include page="footer.jsp" />
 	</fmt:bundle>
 </body>

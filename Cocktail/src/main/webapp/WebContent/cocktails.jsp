@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="dto.Cocktail"%>
 <%@ page import="dao.CocktailRepository"%>
+<%@ page import="java.sql.*"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <!DOCTYPE html>
@@ -33,22 +35,27 @@
 		%>
 		<div class="container">
 			<div class="row">
+				<%@ include file="dbconn.jsp"%>
 				<%
-				for (int i = 0; i < listOfCocktails.size(); i++) {
-					Cocktail cocktail = listOfCocktails.get(i);
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+				String sql = "SELECT * FROM cocktail";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
 				%>
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail"
 						style="box-shadow: 10px 10px 10px gray; width: 320px; height: 500px; margin: 30px;">
-						<img src="./resources/images/<%=cocktail.getFilename()%>"
+						<img src="./resources/images/<%=rs.getString("c_filename")%>"
 							style="width: 100%; height: 50%">
 
-						<h3><%=cocktail.getName()%></h3>
+						<h3><%=rs.getString("c_name")%></h3>
 						<div style="overflow: hidden; height: 30%">
-							<%=cocktail.getDescription()%>
+							<%=rs.getString("c_description")%>
 						</div>
 						<p>
-							<a href="./cocktail.jsp?id=<%=cocktail.getCocktailId()%>"
+							<a href="./cocktail.jsp?id=<%=rs.getString("c_id")%>"
 								style="background: gray" class="btn btn-primary" role="button"><fmt:message key="description"/></a>
 						</p>
 

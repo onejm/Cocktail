@@ -35,6 +35,10 @@
 					<li><a href="./cart.jsp"> <fmt:message key="shoppingBasket" /></a></li>
 						<li><a href="?language=ko">한국어</a></li>
 						<li><a href="?language=en">English</a></li>
+						<li><a href="./editProduct.jsp?edit=update">상품수정</a></li>
+						<li><a href="./editProduct.jsp?edit=delete">상품삭제</a></li>
+						<li><a href="./editCocktail.jsp?edit=update">레시피 수정</a></li>
+						<li><a href="./editCocktail.jsp?edit=delete">레시피 삭제</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
