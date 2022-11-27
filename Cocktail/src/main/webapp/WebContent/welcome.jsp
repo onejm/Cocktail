@@ -110,44 +110,41 @@
 			<div class="container">
 
 				<b> Mixing You
+					<p><h2>믹싱유
+					</h2>
 			</div>
 		</div>
 		<div class="container">
 			<div class="text-center">
 				<div class="page-header">
 					<h1>
-						바텐더의 레시피 추천
+						<fmt:message key="recommendation" />
 						<p>
-							<small> 바텐더를 클릭해보세요!</small>
+							<small> <fmt:message key="click" /></small>
 					</h1>
 				</div>
 				<br> <img src="./resources/images/바텐더.jpg" width="700"
 					onclick="button_click()">
 
 			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<hr style="height: 3px;  background-color: gray;">
-			<br>
-			<br>
-			<br>
+			<br> <br> <br> <br> <br> <br>
+			<hr style="height: 3px; background-color: gray;">
+			<br> <br> <br>
 			<div class="text-center">
 				<div class="page-header">
 					<h1>
-						랜덤 칵테일
+						<fmt:message key="random" />
 						<p>
-							<small> 랜덤으로 뽑힌 재료로 칵테일을 만들어 보세요! </small>
-							<p>
-							<small> Go! 클릭!</small>
+							<small> <fmt:message key="randomCocktail" />
+							</small>
+						<p>
+							<small><fmt:message key="go" /></small>
 					</h1>
 				</div>
-				<button type="button" onclick="randomCocktail();" style="width: 200px; height: 150px; background-color:#A9A9A9; font-weight:bolder; border-radius:100px; font-size:80px; font-color:white;">Go!</button>
+				<button type="button" onclick="randomCocktail();"
+					style="width: 200px; height: 150px; background-color: #A9A9A9; font-weight: bolder; border-radius: 100px; font-size: 80px; font-color: white;">Go!</button>
 				<!-- /input-group -->
-				<div id="printRandom" style="margin:50px; font-size:50px"></div>
+				<div id="printRandom" style="margin: 50px; font-size: 50px"></div>
 			</div>
 			<hr>
 		</div>

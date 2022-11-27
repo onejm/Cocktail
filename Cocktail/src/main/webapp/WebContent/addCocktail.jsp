@@ -106,7 +106,6 @@
 					<label class="col-sm-2"><fmt:message key="recipe" /></label>
 					<div class="col-sm-3">
 						<textarea name="recipe" cols="50" rows="2" class="form-control">
-                               
                             </textarea>
 					</div>
 				</div>
