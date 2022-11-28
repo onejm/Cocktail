@@ -2,7 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/jumbotron.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+	rel="stylesheet">
 <script type="text/javascript">
 	function checkForm() {
 		if (!document.newMember.id.value) {
@@ -22,8 +28,8 @@
 <title>회원 가입</title>
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/menu.jsp"/>
-	<div class="jumbotron">
+<jsp:include page="menu2.jsp"/>
+	<div class="jumbotron01" style="background-image: url('./resources/background.jpg')">
 		<div class="container">
 			<h1 class="display-3">회원 가입</h1>
 		</div>

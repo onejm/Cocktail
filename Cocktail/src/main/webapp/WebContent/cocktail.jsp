@@ -52,24 +52,10 @@
 				<div class="col-md-6">
 					<h3 style="font-weight: bold;"><%=rs.getString("c_name")%></h3>
 					<p>
-						재료: 
-					<% 
-					PreparedStatement pstmt2 = null;
-					ResultSet rs2 = null;
-					String sql2 = "SELECT * FROM product";
-					pstmt2 = conn.prepareStatement(sql2);
-					rs2 = pstmt2.executeQuery();
-					while (rs2.next()){
-						if(rs.getString("c_ingredient").contains(rs2.getString("p_name"))){
-							%>
-							<a href="./product.jsp?id=<%=rs2.getString("p_id")%>"><%=rs2.getString("p_name")%></a> /
-							<%
-						}
-						
-					}
-						%>
+						재료:
+						<%=rs.getString("c_ingredient")%>
 					<p>
-					<%=rs.getString("c_description")%>
+						<%=rs.getString("c_description")%>
 				</div>
 
 				<div class="col-md-11">
@@ -80,19 +66,52 @@
 								<fmt:message key="recipe" />
 							</div>
 						</div>
-						<div class="panel-body">
+						<div class="panel-body" style="font-size: 30px; margin: 40px;">
 							<p align="middle">
+								<br>
 								<iframe width="560" height="315"
 									src="<%=rs.getString("c_youtube")%>" frameborder="0"
 									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 									allowfullscreen></iframe>
 							</p>
+							<br> <br>
 							<p><%=rs.getString("c_recipe")%>
 						</div>
 					</div>
 
+
 				</div>
 			</div>
+
+			<div class='row'>
+				<br> <br> <br> <br>
+				<h3 style="font-weight:bold">관련 상품</h3>
+				<hr>
+				<%
+				PreparedStatement pstmt2 = null;
+				ResultSet rs2 = null;
+				String sql2 = "SELECT * FROM product";
+				pstmt2 = conn.prepareStatement(sql2);
+				rs2 = pstmt2.executeQuery();
+				while (rs2.next()) {
+					if (rs.getString("c_ingredient").contains(rs2.getString("p_name"))) {
+				%>
+				<div class="col-md-4" style="width: 320px; height: 450px;">
+					<img src="./resources/images/<%=rs2.getString("p_filename")%>"
+						style="width: 100%; height: 65%;">
+					<h3><%=rs2.getString("p_name")%></h3>
+					<p>
+						<a href="./product.jsp?id=<%=rs2.getString("p_id")%>"
+							class="btn btn-secondary" role="button"> <!-- &raquo; = 특수문자 >> -->
+							<fmt:message key="description" /> &raquo;
+						</a>
+				</div>
+				<%
+				}
+				}
+				%>
+			</div>
+
 		</div>
 		<%
 		}

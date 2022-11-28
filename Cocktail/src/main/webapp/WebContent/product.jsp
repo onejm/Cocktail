@@ -100,11 +100,11 @@
 				pstmt2 = conn.prepareStatement(sql2);
 				rs2 = pstmt2.executeQuery();
 				while (rs2.next()) {
-					if (rs2.getString("c_ingredient").contains(rs.getString("p_name")))
+					if (rs2.getString("c_ingredient").contains(rs.getString("p_name"))){
 				%>
 				<div class="col-md-4" style="width: 320px; height: 450px;">
 					<img src="./resources/images/<%=rs2.getString("c_filename")%>"
-						style="width: 100%; height: 50%;">
+						style="width: 100%; height: 60%;">
 					<h3><%=rs2.getString("c_name")%></h3>
 					<p>
 						<a href="./cocktail.jsp?id=<%=rs2.getString("c_id")%>"
@@ -113,6 +113,7 @@
 						</a>
 				</div>
 				<%
+				}
 				}
 				%>
 			</div>

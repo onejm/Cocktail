@@ -4,12 +4,19 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/jumbotron.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+	rel="stylesheet">
 <%
 	String sessionId = (String) session.getAttribute("sessionId");
 %>
-	<sql:setDataSource var="dataSource" url="jdbc:oracle:thin:@localhost:1521:XE"
-					   driver="oracle.jdbc.driver.OracleDriver" user="scott" password="tiger"/>
+<sql:setDataSource var="dataSource"
+	url="jdbc:mysql://localhost:3306/CocktailDB"
+	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
 
 <sql:query dataSource="${dataSource}" var="resultSet">
    SELECT * FROM MEMBER WHERE ID=?
@@ -21,8 +28,8 @@
 	<title>회원 수정</title>
 </head>
 <body onload="init()">
-	<jsp:include page="${pageContext.request.contextPath}/menu.jsp" />
-	<div class="jumbotron">
+	<jsp:include page="menu2.jsp"/>
+	<div class="jumbotron01" style="background-image: url('./resources/background.jpg')">
 		<div class="container">
 			<h1 class="display-3">회원 수정</h1>
 		</div>

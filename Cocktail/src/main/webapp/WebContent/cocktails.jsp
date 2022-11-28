@@ -46,7 +46,7 @@
 				%>
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail"
-						style="box-shadow: 10px 10px 10px gray; width: 320px; height: 500px; margin: 30px;">
+						style=" width: 320px; height: 500px; margin: 30px;">
 						<img src="./resources/images/<%=rs.getString("c_filename")%>"
 							style="width: 100%; height: 50%">
 

@@ -5,8 +5,9 @@
 <%
 	String sessionId = (String) session.getAttribute("sessionId");
 %>
-<sql:setDataSource var="dataSource" url="jdbc:oracle:thin:@localhost:1521:XE"
-				   driver="oracle.jdbc.driver.OracleDriver" user="scott" password="tiger"/>
+<sql:setDataSource var="dataSource"
+	url="jdbc:mysql://localhost:3306/CocktailDB"
+	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
    DELETE FROM member WHERE id = ?

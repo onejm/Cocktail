@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	String sessionId = (String) session.getAttribute("sessionId");
+String sessionId = (String) session.getAttribute("sessionId");
 %>
 <!DOCTYPE html>
 <html>
@@ -34,30 +34,36 @@
 						<li><a href="products.jsp"><fmt:message key="productList" /></a></li>
 						<li><a href="cocktails.jsp"><fmt:message
 									key="cocktailList" /></a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-					<% 
-						if(request.isUserInRole("admin")) {
-							%>
-							<jsp:include page="correction.jsp" />
-							 <%
-						}
-						%>
-					<li><a href="./cart.jsp"> <fmt:message key="shoppingBasket" /></a></li>
+						<li><a> || </a></li>
 						<li><a href="?language=ko">한국어</a></li>
 						<li><a href="?language=en">English</a></li>
-						
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<%
+						if (request.isUserInRole("admin")) {
+						%>
+						<jsp:include page="correction.jsp" />
+						<%
+						}
+						%>
 						<c:choose>
-						<c:when test="${empty sessionId}">
-							<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/loginMember.jsp">로그인</a></li>
-							<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/addMember.jsp">회원가입</a></li>
-						</c:when>
-						<c:otherwise>
-							<li style="padding-top: 7px; color:white">[<%=sessionId%>님]</li>
-							<li class="nav-item"><a class="nav-link" href="<c:url value="${pageContext.request.contextPath}/member/logoutMember.jsp"/>"></a></li>
-							<li class="nav-item"><a class="nav-link" href="<c:url value="${pageContext.request.contextPath}/member/updateMember.jsp"/>">회원수정</a></li>
-						</c:otherwise>
-					</c:choose>
+							<c:when test="${empty sessionId}">
+								<li class="nav-item"><a class="nav-link"
+									href="loginMember.jsp">로그인</a></li>
+								<li class="nav-item"><a class="nav-link"
+									href="addMember.jsp">회원가입</a></li>
+							</c:when>
+							<c:otherwise>
+								<li style="padding-top: 15px;">[<%=sessionId%>님]
+								</li>
+								<li class="nav-item"><a class="nav-link"
+									href="<c:url value="logoutMember.jsp"/>">로그아웃</a></li>
+								<li class="nav-item"><a class="nav-link"
+									href="<c:url value="updateMember.jsp"/>">회원수정</a></li>
+							</c:otherwise>
+						</c:choose>
+						<li><a href="./cart.jsp"> <fmt:message
+									key="shoppingBasket" /></a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

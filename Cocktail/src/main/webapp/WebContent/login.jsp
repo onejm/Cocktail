@@ -16,10 +16,10 @@
 <body>
 	<fmt:setLocale value='<%=request.getParameter("language")%>' />
 	<fmt:bundle basename="bundle.message">
-		<jsp:include page="menu.jsp" />
+		<jsp:include page="menu2.jsp" />
 		<div class="jumbotron01"
 			style="background-image: url('./resources/background.jpg')">
-			<div class="container"><fmt:message key="login" /></div>
+			<div class="container">관리자 로그인</div>
 		</div>
 		<div class="container" align="center">
 			<div class="col-md-4 col-md-offset-4">

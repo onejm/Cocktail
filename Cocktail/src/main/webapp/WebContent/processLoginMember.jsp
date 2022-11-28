@@ -10,8 +10,9 @@ String password = request.getParameter("password");
 %>
 
 <sql:setDataSource var="dataSource"
-	url="jdbc:oracle:thin:@localhost:1521:XE"
-	driver="oracle.jdbc.driver.OracleDriver" user="scott" password="tiger" />
+	url="jdbc:mysql://localhost:3306/CocktailDB"
+	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
+
 
 <sql:query dataSource="${dataSource}" var="resultSet">
    SELECT * FROM MEMBER WHERE ID=? and password=?  

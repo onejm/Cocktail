@@ -42,18 +42,21 @@
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
 				%>
-				<div class="col-md-4">
+				<div class="col-md-4"
+					style="width: 320px; height: 500px; margin: 30px;">
 					<img src="./resources/images/<%=rs.getString("p_filename")%>"
 						style="width: 100%">
 					<h3><%=rs.getString("p_name")%></h3>
-					<p><%=rs.getString("p_description")%>
-						<p><%=rs.getString("p_unitPrice")%>원
+					<div style="overflow: hidden; height: 28%">
+						<%=rs.getString("p_description")%>
+					</div>
+					<p><%=rs.getString("p_unitPrice")%>원
 					<p>
-					<a href="./product.jsp?id=<%=rs.getString("p_id")%>"
-							class="btn btn-secondary" role="button"><!-- &raquo; = 특수문자 >> -->
-						<fmt:message key="description" />
-						&raquo; </a>
-					
+						<a href="./product.jsp?id=<%=rs.getString("p_id")%>"
+							class="btn btn-secondary" role="button">
+							<!-- &raquo; = 특수문자 >> --> <fmt:message key="description" />
+							&raquo;
+						</a>
 				</div>
 				<%
 				}
