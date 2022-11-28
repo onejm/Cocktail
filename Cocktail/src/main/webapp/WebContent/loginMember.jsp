@@ -44,7 +44,7 @@
 						name='password' required>
 				</div>
 				<button class="btn btn btn-lg btn-success btn-block" type="submit">로그인</button>
-				<a href="../login.jsp">관리자 로그인</a>
+				<a href="./addProduct.jsp">관리자 로그인</a>
 			</form>
 		</div>
 	</div>

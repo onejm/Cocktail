@@ -9,22 +9,10 @@
      <web-resource-collection>
         <web-resource-name>Cocktail</web-resource-name>
         <description></description>
+        <url-pattern>/WebContent/editCocktail.jsp</url-pattern>
         <url-pattern>/WebContent/addProduct.jsp</url-pattern>
         <url-pattern>/WebContent/editProduct.jsp</url-pattern>
-     </web-resource-collection>
-     <auth-constraint>
-        <description>권한 관리자명</description>
-        <role-name>admin</role-name>
-     </auth-constraint>
-  </security-constraint>
-  
-  <security-constraint>
-     <display-name>Cocktail Security</display-name>
-     <web-resource-collection>
-        <web-resource-name>Cocktail</web-resource-name>
-        <description></description>
         <url-pattern>/WebContent/addCockatil.jsp</url-pattern>
-        <url-pattern>/WebContent/editCocktail.jsp</url-pattern>
      </web-resource-collection>
      <auth-constraint>
         <description>권한 관리자명</description>

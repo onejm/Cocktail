@@ -146,7 +146,23 @@
 				<!-- /input-group -->
 				<div id="printRandom" style="margin: 50px; font-size: 50px"></div>
 			</div>
-			<hr>
+						<br> <br> <br> <br> <br> <br>
+			<hr style="height: 3px; background-color: gray;">
+			<br> <br> <br>
+			<div class="text-center">
+				<div class="page-header">
+					<h1>
+						<fmt:message key="introduction" />
+						<p>
+							<small> <fmt:message key="a" />
+							</small>
+						<p>
+							<small>Click! Book!</small>
+					</h1>
+				</div>
+			<img src="./resources/images/å.png" width="400"
+					onclick="location.href='information.jsp'">
+			
 		</div>
 		<%@ include file="footer.jsp"%>
 	</fmt:bundle>
