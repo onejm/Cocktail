@@ -24,4 +24,15 @@ CREATE TABLE IF NOT EXISTS product(
 
 show tables;
 
-drop table cocktail;
+CREATE TABLE member(
+    id VARCHAR(30) not null,
+    password VARCHAR(30) not null,
+    name VARCHAR(30) not null,
+    gender VARCHAR(7),
+    birth vARCHAR(20),
+    mail VARCHAR(30),
+    phone VARCHAR(30),
+    address VARCHAR(90),
+    regist_day VARCHAR(50),
+    PRIMARY KEY (id)
+)default CHARSET=utf8;
