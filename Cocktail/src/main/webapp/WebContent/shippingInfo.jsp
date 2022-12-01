@@ -21,7 +21,6 @@
 		style="background-image: url('./resources/background.jpg')">
 		<div class="container">주문 정보</div>
 	</div>
-	
 	<div class="container">
 		<form action="./processShippingInfo.jsp" class="form-horizontal"
 			method="post">
