@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
-
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="dto.Cocktail"%>
 <%@ page import="dao.CocktailRepository"%>
@@ -100,7 +99,7 @@
 				pstmt2 = conn.prepareStatement(sql2);
 				rs2 = pstmt2.executeQuery();
 				while (rs2.next()) {
-					if (rs2.getString("c_ingredient").contains(rs.getString("p_name"))){
+					if (rs2.getString("c_ingredient").contains(rs.getString("p_name"))) {
 				%>
 				<div class="col-md-4" style="width: 320px; height: 450px;">
 					<img src="./resources/images/<%=rs2.getString("c_filename")%>"

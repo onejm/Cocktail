@@ -11,7 +11,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
 	rel="stylesheet">
-<title>배송 정보</title>
+<title>주문 정보</title>
 </head>
 <body>
 	<fmt:setLocale value='<%=request.getParameter("language")%>' />
@@ -19,7 +19,7 @@
 	<jsp:include page="menu.jsp" />
 	<div class="jumbotron01"
 		style="background-image: url('./resources/background.jpg')">
-		<div class="container">배송 정보</div>
+		<div class="container">주문 정보</div>
 	</div>
 	<div class="container">
 		<form action="./processShippingInfo.jsp" class="form-horizontal"
