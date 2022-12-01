@@ -9,7 +9,7 @@ realFolder를 본인 파일 위치로 수정해야 파일 업로드 가능
 <br>
 <br>
 실행시
-서버의 tomcat-users.xml 파일에 <role rolename="admin" /><user username="admin" password="admin1234" roles="admin" /> 등록 필요
+서버의 tomcat-users.xml 파일에 role rolename="admin" 와 user username="admin" password="admin1234" roles="admin" 추가 필요
 <br>
 <br>
 DB 버전: MySQL 5.7
